@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+ 
+
+  <PropertyGroup>
+<OutputType>WinExe</OutputType>
+<TargetFramework>net7.0-windows</TargetFramework>
+<Nullable>enable</Nullable>
+<UseWPF>true</UseWPF>
+</PropertyGroup>
+
+ 
+
+  <ItemGroup>
+<None Remove="Assets\FogOfWarCroppedSmall.jpg" />
+<None Remove="Assets\Labyrinth.jpg" />
+<None Remove="Assets\Marker.png" />
+<None Remove="Assets\PlayerLarge.png" />
+<None Remove="Assets\TestLabyrinthRoadSampleArea.jpg" />
+<None Remove="Images\circle-oval-red-shape-clip-art-red-shapes-155078584706d4a2d5ecd21d533bf1b7.png" />
+<None Remove="Images\congratulations.jpg" />
+<None Remove="Images\favicon.ico" />
+<None Remove="Images\FogOfWarFull.jpg" />
+<None Remove="Images\LabyrinthD.png" />
+<None Remove="Images\Labyrintok.png" />
+<None Remove="Images\maze.png" />
+<None Remove="Images\mazeIcon.ico" />
+<None Remove="Images\movecharacter.png" />
+<None Remove="Images\ratin-espertin-rato-esperto.gif" />
+<None Remove="Images\red-circle-outline-png.png" />
+<None Remove="Images\redarrow.png" />
+<None Remove="Images\redexit.png" />
+<None Remove="Images\soundoff.png" />
+<None Remove="Images\soundon.png" />
+</ItemGroup>
+
+ 
+
+  <ItemGroup>
+<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+</ItemGroup>
+
+ 
+
+	<ItemGroup>
+<Resource Include="Assets\FogOfWarCroppedSmall.jpg" />
+<Resource Include="Assets\Labyrinth.jpg" />
+<Resource Include="Assets\Marker.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Assets\PlayerLarge.png" />
+<Resource Include="Assets\TestLabyrinthRoadSampleArea.jpg" />
+<Resource Include="Images\circle-oval-red-shape-clip-art-red-shapes-155078584706d4a2d5ecd21d533bf1b7.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\congratulations.jpg">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\FogOfWarFull.jpg" />
+<Resource Include="Images\LabyrinthD.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\Labyrintok.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\maze.png">
+<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\favicon.ico">
+<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\mazeIcon.ico">
+<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Fonts\Afogand-ALMqL.ttf">
+<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\movecharacter.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\red-circle-outline-png.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\redarrow.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\redexit.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\soundoff.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+<Resource Include="Images\soundon.png">
+  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Resource>
+</ItemGroup>
+
+ 
+
+ 
+
+</Project>

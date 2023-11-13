@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Labyrinth.Views.DifficultySelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:Labyrinth.ViewModels"
+             xmlns:local="clr-namespace:Labyrinth.Views"
+             xmlns:models="clr-namespace:Labyrinth.Models"
+             d:DataContext="{d:DesignInstance vm:DifficultySelectionViewModel}"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.DataContext>
+        <vm:DifficultySelectionViewModel />
+    </UserControl.DataContext>
+    <Grid  MaxWidth="1920" MaxHeight="1080">
+
+        <!-- Background Image -->
+
+        <Image Source="/Images/maze.png" Stretch="UniformToFill" />
+        <Image Margin="886,558,0,0" Source="/Images/Labyrintok.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="420" Width="872"/>
+
+
+        <!-- Game Studio Title -->
+        <TextBlock x:Name="tbx_ChooseDifficulty" Text="Välj din önskade svårighetsgrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="60" Foreground="WhiteSmoke" FontFamily="{StaticResource Afogand}" Grid.ColumnSpan="2" Margin="488,0,0,0" />
+
+
+
+
+        <Button x:Name="btn_Hard" Content="Svår" Command="{Binding HardCommand}" Cursor="Hand" FontSize="30" FontFamily="{StaticResource Afogand}" Margin="1311,284,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="87" Width="300">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10" Background="WhiteSmoke">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="bnt_Medium" Content="Medel" Command="{Binding MediumCommand}" Cursor="Hand" FontSize="30" FontFamily="{StaticResource Afogand}" Margin="716,281,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="300">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10" Background="WhiteSmoke">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn_Easy" Content="Lätt" Command="{Binding EasyCommand}" Cursor="Hand" FontSize="30" FontFamily="{StaticResource Afogand}" Margin="229,276,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="300">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10" Background="WhiteSmoke">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <TextBlock Text="{Binding HardLevelText}" Foreground="White" FontFamily="{StaticResource Afogand}" FontSize="16" Background="Black" TextAlignment="Center" Margin="1302,371,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <TextBlock Text="{Binding NormalLevelText}" Foreground="White" FontFamily="{StaticResource Afogand}" FontSize="16" Background="Black" TextAlignment="Center" Margin="716,361,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" />
+        <TextBlock Text="{Binding EasyLevelText}" Foreground="White" FontFamily="{StaticResource Afogand}" FontSize="16" Background="Black" TextAlignment="Center" Margin="229,356,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" />
+        <Image Margin="379,596,1338,116" Source="/Images/movecharacter.png" Stretch="Fill"/>
+        <TextBlock HorizontalAlignment="Left" Margin="248,572,0,0" TextWrapping="Wrap" Text="FLYTTA SPELAREN GENOM ATT RÖRA PIL TANGENTERNA" VerticalAlignment="Top" Foreground="White" FontFamily="Afogand" FontSize="20"/>
+        <Image Margin="1292,606,0,0" Source="/Images/redexit.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="23"/>
+        <Image Margin="1477,707,0,0" Source="/Images/red-circle-outline-png.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="94" Width="164"/>
+        <Image Margin="886,529,0,0" Source="/Images/circle-oval-red-shape-clip-art-red-shapes-155078584706d4a2d5ecd21d533bf1b7.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="113" Width="142"/>
+        <Image Margin="1032,567,0,0" Source="/Images/redarrow.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="37" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-8.317"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="1074,560,0,0" TextWrapping="Wrap" Text="Håll ett öga på tiden!" VerticalAlignment="Top" Foreground="White" FontFamily="Afogand" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1342,578,0,0" TextWrapping="Wrap" Text="UTgång" VerticalAlignment="Top" Foreground="White" FontFamily="Afogand" FontSize="18"/>
+        <Image Margin="1318,593,0,0" Source="/Images/redarrow.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="14" Width="21" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-24.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Margin="1597,704,0,0" Source="/Images/redarrow.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="24" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-54.089"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="1516,670,0,0" TextWrapping="Wrap" Text="Spelarens synlighetsfält" VerticalAlignment="Top" Foreground="White" FontFamily="Afogand" FontSize="18"/>
+      
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

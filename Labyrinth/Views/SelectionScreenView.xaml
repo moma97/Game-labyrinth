@@ -1,0 +1,60 @@
+<UserControl x:Class="Labyrinth.Views.SelectionScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Labyrinth.Views"
+             xmlns:vm="clr-namespace:Labyrinth.ViewModels"
+             xmlns:enum="clr-namespace:Labyrinth.Enums1"
+             xmlns:converter="clr-namespace:Labyrinth.Converters1"
+             d:DataContext="{d:DesignInstance vm:SelectionScreenViewModel}"             
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <UserControl.Resources>
+        <converter:UserControlToViewConverter x:Key="UserControlToViewConverter"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="/Images/maze.png" Stretch="UniformToFill"/>
+
+        <!-- Grid  -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Instructions -->
+            <TextBlock x:Name="tbx_chooseNextAction" Text="Studio G6 presenterar FoggyMaze" HorizontalAlignment="Center" FontSize="60" Margin="0,20,0,10" Foreground="White" FontFamily="{StaticResource Afogand}">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="10" Color="Black" BlurRadius="20"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <!-- Button to switch view -->
+            <Button x:Name="btn_StartGame" Command="{Binding ChangeUserControlCommand, Source={x:Static vm:MainViewModel.Instance}}" FontSize="30" Width="500" Height="80" Content="Spela spelet!" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,293,0,0" Cursor="Hand" FontFamily="{StaticResource Afogand}" CommandParameter="{x:Static enum:UserControl1.Difficulty}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="WhiteSmoke">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Button to exit the game -->
+            <Button x:Name="bnt_QuitGame" Command="{Binding QuitGameCommand, Source={x:Static vm:MainViewModel.Instance}}" FontSize="30" Width="500" Height="80" Content="Avsluta spelet!" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,447,0,0" Cursor="Hand" FontFamily="{StaticResource Afogand}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="WhiteSmoke">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>
